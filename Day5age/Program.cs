@@ -15,6 +15,7 @@ namespace Day5age
             Console.WriteLine("Enter date of birth");
             var yrDt = Console.ReadLine();
             var dt = DateTime.Parse(yrDt);
+            var dtdiff = yrDt - dt;
             int yrdiff = Math.Abs(myDt.Year - dt.Year);
             int modiff= Math.Abs(myDt.Month - dt.Month);
             int daydiff = Math.Abs(myDt.Day - dt.Day);
