@@ -71,7 +71,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5dictionary", "Day5dicti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5dictioaryoflist", "Day5dictioaryoflist\Day5dictioaryoflist.csproj", "{C6802F75-2888-4C10-BB6C-DCA335BC6E19}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day6", "Day6", "{D357D64A-FD91-4565-B9B0-2AF082DC163D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day7", "Day7", "{D357D64A-FD91-4565-B9B0-2AF082DC163D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
