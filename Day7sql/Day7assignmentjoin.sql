@@ -7,7 +7,6 @@ SELECT  subject.name AS subject_name, studentbasic.fname AS student_name, marks.
 FROM marks
 INNER JOIN subject ON marks.subject_id = subject.id
 INNER JOIN STUDENTbasic ON marks.student_id = STUDENTbasic.id;
-
 select STUDENTbasic.id as studentid, exam.id as examid
 from STUDENTbasic
 inner join marks on marks.student_id= STUDENTbasic.id 
