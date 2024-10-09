@@ -9,8 +9,6 @@
 ----    CONSTRAINT FK_marks_exam FOREIGN KEY (exam_id) REFERENCES EXAM(id)
 --);
 
-INSERT INTO MARKS (exam_id, subject_id, mark, student_id)
-VALUES
-(1, 1, 85.5, 1),  
-(2, 2, 45.0, 1),  
-(3, 3, 78.0, 1);
+--INSERT INTO MARKS (exam_id, subject_id, mark, student_id) VALUES (1, 1, 85.5, 1),(2, 2, 45.0, 1),  (3, 3, 78.0, 1);
+
+select* from marks
