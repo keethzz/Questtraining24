@@ -8,8 +8,9 @@ FROM marks
 INNER JOIN subject ON marks.subject_id = subject.id
 INNER JOIN STUDENTbasic ON marks.student_id = STUDENTbasic.id;
 
-select STUDENTbasic.id as studentid, exam.id as examid
-from STUDENTbasic
-inner join marks on marks.student_id= STUDENTbasic.id 
-inner join EXAM on marks.exam_id = exam.id;
+SELECT DISTINCT exam.id AS examid, STUDENTbasic.id AS studentid
+FROM STUDENTbasic
+INNER JOIN marks ON marks.student_id = STUDENTbasic.id
+INNER JOIN exam ON marks.exam_id = exam.id
+WHERE STUDENTbasic.id = 1;
 
