@@ -1,0 +1,1 @@
+﻿select* from transactions where  id = (select id from customer where id = 1);
