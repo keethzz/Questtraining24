@@ -10,7 +10,7 @@ namespace Day9qs1
     {
         static void Main(string[] args)
         {
-          
+          Dictionary<string,string> d = new Dictionary<string,string>();
            
         }
       
