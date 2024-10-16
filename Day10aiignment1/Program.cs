@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Day10aiignment1
 {
+    class CreditcargManager
+    {
+
+    }
     internal class Program
     {
         static List<CreditCard> creditCards = new List<CreditCard>();
@@ -17,8 +21,7 @@ namespace Day10aiignment1
                 Console.WriteLine("2.Search Credit Card by Card Number");
                 Console.WriteLine("3.Update Credit Card");
                 Console.WriteLine("4.Delete Credit Card");
-                Console.WriteLine("5.Exit");
-                Console.Write("Choose an option: ");
+                
 
                 var choice = Console.ReadLine();
 
