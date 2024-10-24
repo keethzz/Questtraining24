@@ -201,6 +201,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day16Exception", "Day16Exce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day16indexer", "Day16indexer\Day16indexer.csproj", "{FDA6F47C-2D63-4A26-A140-C741762034C0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assesment2", "Assesment2", "{4894F767-05FA-483D-BD66-8F54B88E521E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assesmet2machinecode", "Assesmet2machinecode\Assesmet2machinecode.csproj", "{0F17F3FD-1726-4E48-AB87-6BD934B56A7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -551,6 +555,10 @@ Global
 		{FDA6F47C-2D63-4A26-A140-C741762034C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDA6F47C-2D63-4A26-A140-C741762034C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDA6F47C-2D63-4A26-A140-C741762034C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F17F3FD-1726-4E48-AB87-6BD934B56A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F17F3FD-1726-4E48-AB87-6BD934B56A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F17F3FD-1726-4E48-AB87-6BD934B56A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F17F3FD-1726-4E48-AB87-6BD934B56A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -639,6 +647,7 @@ Global
 		{B9C59FA1-1904-418F-AE13-D3A082BD03FC} = {138EB0AE-94ED-436F-86F1-672917A05221}
 		{00016676-1841-41B6-9153-C1D75CD4A4CC} = {138EB0AE-94ED-436F-86F1-672917A05221}
 		{FDA6F47C-2D63-4A26-A140-C741762034C0} = {138EB0AE-94ED-436F-86F1-672917A05221}
+		{0F17F3FD-1726-4E48-AB87-6BD934B56A7B} = {4894F767-05FA-483D-BD66-8F54B88E521E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAB5CF38-8D46-4EBA-87A0-731ACC7EF535}
