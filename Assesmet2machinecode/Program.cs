@@ -45,12 +45,12 @@ namespace Assesmet2machinecode
             var doctorManager = new DoctorManager();
             while (true)
             {
-                Console.WriteLine("\n1. Add Patient");
-                Console.WriteLine("2. Get All Patients");
+                Console.WriteLine("1. Add Patient");
+                Console.WriteLine("2. Get Patients");
                 Console.WriteLine("3. Update Patient");
                 Console.WriteLine("4. Remove Patient");
                 Console.WriteLine("5. Add Doctor");
-                Console.WriteLine("6. Get All Doctors");
+                Console.WriteLine("6. Get Doctors");
                 Console.WriteLine("7. Update Doctor");
                 Console.WriteLine("8. Remove Doctor");
                 Console.Write("Choose an option: ");

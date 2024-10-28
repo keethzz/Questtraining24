@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assesmet2machinecode.Entities
 {
-    public enum Specialization
+    public abstract class P
     {
-        Cardiologist,
-        Neurologist,
-        Dermatologist,
-        Pediatrician,
-        Orthopedist
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
