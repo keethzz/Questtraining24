@@ -1,4 +1,5 @@
 ﻿using Day14Healthmanagement.Data;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,10 @@ using System.Threading.Tasks;
 namespace Day14Healthmanagement
 {
     internal class HealthCareManager
+
     {
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(HealthCareManager));
         private DataStore _store;
 
         public HealthCareManager()
@@ -18,24 +22,31 @@ namespace Day14Healthmanagement
 
         public void ListUpcomingAppontmentsInNextSevenDays()
         {
-            var result = _store.Appointments
-                .Where(a => a.AppointmentDate >= DateTime.Now && a.AppointmentDate <= DateTime.Now.AddDays(7))
-                .Join(_store.Patients,
-                    a => a.PatientId,
-                    p => p.Id,
-                    (a, p) => new
-                    {
-                        Name = p.Name,
-                        Age = p.Age,
-                        MedicalCondition = p.MedicalCondition,
-                        AppointmentDate = a.AppointmentDate,
-                    }
-                );
-
-            Console.WriteLine("Appointments in next seven days:");
-            foreach (var item in result)
+            try
             {
-                Console.WriteLine($"{item.Name}, {item.Age}, {item.MedicalCondition}, {item.AppointmentDate}");
+                var result = _store.Appointments
+                    .Where(a => a.AppointmentDate >= DateTime.Now && a.AppointmentDate <= DateTime.Now.AddDays(7))
+                    .Join(_store.Patients,
+                        a => a.PatientId,
+                        p => p.Id,
+                        (a, p) => new
+                        {
+                            Name = p.Name,
+                            Age = p.Age,
+                            MedicalCondition = p.MedicalCondition,
+                            AppointmentDate = a.AppointmentDate,
+                        }
+                    );
+
+                Console.WriteLine("Appointments in next seven days:");
+                foreach (var item in result)
+                {
+                    Console.WriteLine($"{item.Name}, {item.Age}, {item.MedicalCondition}, {item.AppointmentDate}");
+                }
+            }
+            catch(Exception e)
+            {
+                log.Error(e.Message);
             }
         }
 

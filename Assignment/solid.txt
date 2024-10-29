@@ -1,0 +1,149 @@
+1. Single Responsibility Principle (SRP):
+Definition: A class should have only one reason to change, meaning it should have only one responsibility or job.
+
+// One class with multuple resposibility.
+public class Employee
+{
+    public void CalculateSalary() { /* logic */ }
+    public void SaveToDatabase() { /* logic */ }
+    public void GenerateReport() { /* logic */ }
+}
+
+// Split the responsiblities to diff class
+public class Employee
+{
+    public void CalculateSalary() { /* logic */ }
+}
+
+public class EmployeeRepository
+{
+    public void SaveToDatabase(Employee employee) {  }
+}
+
+public class EmployeeReport
+{
+    public void GenerateReport(Employee employee) { }
+}
+
+
+
+2. Open/Closed Principle (OCP):
+Classes should be open for extension but closed for modification. You should be able to add new functionality without changing existing code.
+
+//Violates OCP
+
+public class PaymentProcessor
+{
+    public void ProcessPayment(string paymentType)
+    {
+        if (paymentType == "CreditCard") {}
+        else if (paymentType == "PayPal") { }
+        // More payment types need modification
+    }
+}
+
+// Follows OCP by creating abstract class and extends it
+
+public abstract class PaymentProcessor
+{
+    public abstract void ProcessPayment();
+}
+
+public class CreditCardPayment : PaymentProcessor
+{
+    public override void ProcessPayment() {  }
+}
+
+public class PayPalPayment : PaymentProcessor
+{
+    public override void ProcessPayment() {  }
+}
+
+
+
+3. Liskov Substitution Principle (LSP):
+Subclasses should be substitutable for their base classes without altering the correctness of the program.
+
+//Violates LSP
+public class Rectangle
+{
+    public virtual int Width { get; set; }
+    public virtual int Height { get; set; }
+    public int GetArea() => Width * Height;
+}
+
+public class Square : Rectangle
+{
+    public override int Width
+    {
+        set { base.Width = base.Height = value; }
+    }
+    public override int Height
+    {
+        set { base.Width = base.Height = value; }
+    }
+}
+
+// Follows LSP by creating abstract/interface
+public abstract class Shape
+{
+    public abstract int GetArea();
+}
+
+public class Rectangle : Shape
+{
+    public int Width { get; set; }
+    public int Height { get; set; }
+    public override int GetArea() => Width * Height;
+}
+
+public class Square : Shape
+{
+    public int Side { get; set; }
+    public override int GetArea() => Side * Side;
+}
+
+
+4. Interface Segregation Principle (ISP):
+Clients should not be forced to implement interfaces they do not use. Large interfaces should be split into smaller, more specific ones.
+
+//Violates ISP
+public interface IMachine
+{
+    void Print();
+    void Scan();
+    void Fax();
+}
+
+public class OldPrinter : IMachine
+{
+    public void Print() {  }
+    public void Scan() {  }
+    public void Fax() { /* Not needed */ }
+}
+
+//Follows ISP we split interface to smaller parts
+public interface IPrinter
+{
+    void Print();
+}
+
+public interface IScanner
+{
+    void Scan();
+}
+
+public interface IFax
+{
+    void Fax();
+}
+
+public class OldPrinter : IPrinter
+{
+    public void Print() { }
+}
+
+
+5. Dependency Inversion Principle (DIP):
+High-level modules should not depend on low-level modules. Both should depend on abstractions (interfaces).
+
