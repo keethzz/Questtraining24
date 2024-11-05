@@ -1,0 +1,117 @@
+Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around data, or objects, rather than functions and logic. 
+The core concepts of OOP include:
+
+1.Encapsulation: Bundling data (attributes) and methods (functions) into a single unit or class, keeping internal workings hidden from the outside.
+
+2.Abstraction: Hiding complex implementation details and showing only essential features of an object to reduce complexity.
+
+3.Inheritance: Allowing a new class to inherit attributes and behaviors from an existing class, promoting code reuse.
+
+4.Polymorphism: Enabling objects to be treated as instances of their parent class, allowing methods to do different things based on the object.
+
+
+Exceptions and types
+
+1. System Exceptions: They represent errors caused by the system, like hardware or framework-level issues.
+
+*NullReferenceException: Thrown when trying to access a member of a null object.
+*IndexOutOfRangeException: Thrown when attempting to access an array index that’s out of bounds.
+*InvalidOperationException: Thrown when a method call is invalid for the current state of the object.
+*StackOverflowException: Thrown when there’s a stack overflow, often due to too much recursion.
+*DivideByZeroException: Thrown when attempting to divide by zero.
+
+2. Application Exceptions: They typically derive from the ApplicationException class or directly from Exception. Developers often create custom exceptions to handle application-specific errors, such as:
+
+**Custom Exceptions: Created by inheriting from Exception for handling business or application-specific errors.
+Example: InvalidAgeException for age validation in user input.
+
+3. I/O Exceptions:These exceptions occur during input/output operations
+
+*FileNotFoundException: Thrown when an attempt to access a file that doesn’t exist.
+*DirectoryNotFoundException: Thrown when trying to access a directory that doesn’t exist.
+*IOException: A general exception for I/O errors.
+
+4. Network Exceptions:These are exceptions related to network operations, often found in the System.Net namespace.
+
+*WebException: Thrown for network-related errors, such as issues with HTTP requests.
+*SocketException: Thrown for errors when using sockets for network communication.
+
+5. Database Exceptions:These exceptions are related to database operations, particularly when working with System.Data and SQL connections.
+
+SqlException: Thrown when SQL Server returns an error or warning.
+DBConcurrencyException: Thrown when there’s a concurrency violation, usually due to database update conflicts.
+
+8. Arithmetic Exceptions
+These are exceptions that occur due to arithmetic operations, found in the System namespace.
+
+*ArithmeticException: The base class for arithmetic exceptions.
+*OverflowException: Thrown when an arithmetic operation overflows (e.g., exceeding data type limits).
+
+
+A constructor in C# is a special method in a class or struct that is called automatically when an instance (object) of that class or struct is created.				Constructor
+The primary purpose of a constructor is to initialize the object’s state, often by setting initial values for its fields. 
+Constructors have the same name as the class and do not have a return type.
+
+Types of Constructors in C#
+1.Default Constructor
+A parameterless constructor that initializes an object with default values.
+If no constructor is defined, C# provides a default constructor automatically.
+
+2.Parameterized Constructor
+A constructor that accepts parameters, allowing initialization with specific values at the time of object creation.
+
+3.Copy Constructor
+A constructor that creates a new object as a copy of an existing object.
+Not automatically provided in C#, so you need to define it manually if needed.
+
+4.Static Constructor
+A special constructor used to initialize static members of a class.
+It runs only once, when the class is first accessed.
+No parameters allowed, and it cannot have access modifiers.
+
+5.Private Constructor
+A constructor that restricts instantiation of a class from outside, often used in singleton patterns or utility classes.
+Prevents creating an instance directly; useful for classes with only static members.
+
+
+1. Overloading																				Overloading
+Definition: Overloading allows multiple methods in the same class to have the same name but different parameters (either in type, number, or both).
+Purpose: It provides flexibility by enabling methods to handle different types or numbers of inputs under the same method name.
+When to Use:
+When you need multiple versions of a method to handle different parameter types or numbers.
+
+2. Overriding
+Definition: Overriding allows a derived class to provide a specific implementation of a method that is already defined in its base (parent) class.			Overriding
+Purpose: It enables polymorphism, where a derived class can modify behavior inherited from the base class, offering a customized implementation.
+When to Use:
+When you need to change or extend the behavior of an inherited method in a subclass.
+
+The try-catch block in C# is used for exception handling. 
+It allows you to run code that may throw an exception and handle potential errors gracefully without crashing the program.
+
+How It Works:
+try Block: Place code that may throw an exception inside the try block. 												try catch
+	If an exception occurs in this block, the code execution immediately jumps to the catch block.
+catch Block: The catch block defines how to handle specific exceptions.
+	 You can catch specific exceptions (e.g., DivideByZeroException) or use a general Exception to handle any exception type.
+
+
+Property
+A property is a member that encapsulates a field and provides a controlled way to access or modify its value.								property
+Get Accessor (get)
+The get accessor is used to retrieve the value of a property. It’s essentially a method that runs when you read the property.
+Set Accessor (set)
+The set accessor is used to assign a value to a property. It usually includes the value keyword, which represents the value assigned to the property.
+
+Multithreading is a programming concept where multiple threads run concurrently within a single program. 								Multithreading
+Benefits of Multithreading
+Increased Performance: By running multiple threads concurrently, multithreading can make better use of CPU resources
+
+Enhanced Responsiveness: Multithreading allows for tasks to run in the background, such as loading data or processing calculations, 
+			while the main application remains responsive to user input.
+
+Efficient Resource Utilization: Multithreading can help reduce idle time by efficiently using system resources. 
+
+Simplified Asynchronous Programming: Multithreading makes it easier to handle tasks asynchronously, such as downloading files.
+
+Parallelism: By dividing a large task into smaller parts and running them in parallel.

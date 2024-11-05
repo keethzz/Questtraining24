@@ -6,32 +6,28 @@ using System.Threading.Tasks;
 
 namespace Day19ecommercemanagement
 {
-    internal class Cart
+    class Cart
     {
-        private List<Item> items = new List<Item>();
+        private readonly List<CartItem> _items = new List<CartItem>();
 
-        public void AddItem(Item item)
+        public void Add(CartItem item)
         {
-            items.Add(item);
-        }
-
-        public void UpdateItemQuantity(string itemName, int quantity)
-        {
-            Item item = items.Find(i => i.Name == itemName);
-            if (item != null)
+            var existingItem = _items.FirstOrDefault(i => i.Name == item.Name);
+            if (existingItem != null)
             {
-                item.Quantity = quantity;
+                existingItem.Quantity += item.Quantity;
+            }
+            else
+            {
+                _items.Add(item);
             }
         }
 
-        public void RemoveItem(string itemName)
+        public void Remove(string productName)
         {
-            items.RemoveAll(i => i.Name == itemName);
+            _items.RemoveAll(i => i.Name == productName);
         }
 
-        public List<Item> GetItems()
-        {
-            return items;
-        }
+        public List<CartItem> GetAll() => _items;
     }
 }

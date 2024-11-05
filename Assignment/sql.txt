@@ -1,0 +1,107 @@
+In SQL, constraints are rules applied to table columns to enforce data integrity and ensure valid data entry. Here are the main types of constraints:		Constraints
+
+NOT NULL: Ensures that a column cannot contain NULL values.
+
+UNIQUE: Ensures that all values in a column are distinct, preventing duplicate entries.
+
+PRIMARY KEY: A combination of NOT NULL and UNIQUE, this constraint uniquely identifies each record in a table. A table can have only one primary key.
+
+FOREIGN KEY: Establishes a relationship between two tables, enforcing referential integrity. It ensures that values in one table correspond to valid values in another.
+
+CHECK: Ensures that all values in a column satisfy a specific condition, allowing you to enforce business rules.
+
+DEFAULT: Sets a default value for a column when no value is specified during record insertion.
+
+anomaly" typically refers to inconsistencies or irregularities in data that can occur in a database. There are three main types of anomalies related to database normalization:		Anoma
+
+Insertion Anomaly: This occurs when certain attributes cannot be inserted into the database without the presence of other attributes. 
+For example, if a new customer wants to be added without any orders, you may be unable to do so without entering order details.
+
+Deletion Anomaly: This happens when the deletion of data inadvertently leads to the loss of other important data. 
+For instance, if a customer record is deleted, but that record is the only one holding information about a particular product, the product information might also be lost.
+
+Update Anomaly: This occurs when a change in one place requires changes in multiple places, leading to potential inconsistencies.
+ For example, if a customer's address is stored in multiple places and is updated in one but not in others, it can result in conflicting information.
+
+In SQL, a view is a virtual table that is based on the result of a query. 
+It does not store data itself but provides a way to represent data from one or more tables in a simplified or more specific manner. Here are some key features and uses of views:	View
+Creating a View
+You can create a view using the CREATE VIEW statement. For example:
+
+sql
+Copy code
+CREATE VIEW employee_view AS
+SELECT id, name, department
+FROM employees
+WHERE status = 'active';
+
+
+The GROUP BY clause groups rows that have the same values in specified columns into aggregated data.										groupby
+Aggregate Functions: You can use aggregate functions to summarize the data in each group.
+SELECT Statement: All columns in the SELECT statement that are not part of an aggregate function must be included in the GROUP BY clause.
+
+
+
+
+A stored procedure is a set of SQL statements that are stored in the database and can be executed as a single unit. 								Stored 
+
+Stored procedures are used to encapsulate repetitive tasks, encapsulate business logic, and improve performance by reducing network traffic. 
+You can create a stored procedure using the CREATE PROCEDURE statement.
+To execute a stored procedure, use the EXEC or EXECUTE statement
+
+
+Long-Term Release: Major updates with significant features, less frequent, and thoroughly tested.							Long and short term
+Short-Term Release: Minor updates or fixes, more frequent, and quickly implemented.
+
+Soft Delete: Logical deletion; records marked as deleted but not removed.
+
+
+Here’s a brief overview of aggregate functions in SQL without code:										Agregate
+
+COUNT(): Counts the number of rows that match a condition.
+
+SUM(): Calculates the total sum of a numeric column.
+
+AVG(): Computes the average value of a numeric column.
+
+MIN(): Finds the smallest value in a set of values.
+
+MAX(): Identifies the largest value in a set of values.
+
+
+
+Here’s a brief summary of SQL commands categorized into DDL, DML, DCL, and TCL:										Commands
+
+1. Data Definition Language (DDL)
+CREATE: Creates a new database object (e.g., table, view).
+ALTER: Modifies an existing database object (e.g., adding columns).
+DROP: Deletes a database object (e.g., table, view).
+TRUNCATE: Removes all rows from a table while keeping its structure.
+
+2. Data Manipulation Language (DML)
+SELECT: Retrieves data from tables.
+INSERT: Adds new records to a table.
+UPDATE: Modifies existing records in a table.
+DELETE: Removes records from a table.
+
+3. Data Control Language (DCL)
+GRANT: Provides specific privileges to users.
+REVOKE: Removes specific privileges from users.
+
+4. Transaction Control Language (TCL)
+COMMIT: Saves all changes made during the current transaction.
+ROLLBACK: Undoes changes made during the current transaction.
+SAVEPOINT: Sets a point to which you can later roll back within a transaction.
+SET TRANSACTION: Configures transaction properties (e.g., read-only).
+
+
+
+Here’s a brief overview of SQL joins:
+
+INNER JOIN: Returns rows with matching values in both tables.
+
+LEFT JOIN (LEFT OUTER JOIN): Returns all rows from the left table and matched rows from the right table; unmatched rows from the right return NULL.		Joins
+
+RIGHT JOIN (RIGHT OUTER JOIN): Returns all rows from the right table and matched rows from the left table; unmatched rows from the left return NULL.
+
+FULL JOIN (FULL OUTER JOIN): Returns all rows when there is a match in either table; unmatched rows will have NULLs in the columns of the other table.

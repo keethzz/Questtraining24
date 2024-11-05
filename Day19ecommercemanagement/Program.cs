@@ -15,28 +15,19 @@ Challenge: Use the Open/Closed Principle (OCP) to ensure that you can add new di
 
 namespace Day19ecommercemanagement
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            // Create a cart and add items
-            Cart cart = new Cart();
-            cart.AddItem(new Item("Laptop", 1, 1000));
-            cart.AddItem(new Item("Headphones", 2, 100));
+            var cart = new Cart();
+            cart.Add(new CartItem { Name = "Item 1", Price = 100, Quantity = 2 });
+            cart.Add(new CartItem { Name = "Item 2", Price = 200, Quantity = 3 });
+            cart.Add(new CartItem { Name = "Item 3", Price = 300, Quantity = 4 });
 
-            // Apply a percentage discount
-            Discount discount = new PercentageDiscount(10); // 10% discount
-            BillingService billingService = new BillingService(cart, discount);
-
-            // Calculate total after discount
-            decimal totalAmount = billingService.CalculateTotal();
-            Console.WriteLine("Total amount after discount: " + totalAmount);
-
-            // Change the discount strategy to FlatDiscount
-            discount = new FlatDiscount(100); // Flat discount of $100
-            billingService = new BillingService(cart, discount);
-            totalAmount = billingService.CalculateTotal();
-            Console.WriteLine("Total amount after flat discount: " + totalAmount);
+            var discountStrategy = new PercentageDiscountStrategy();
+            var billingService = new BillingService(discountStrategy);
+            var totalAmount = billingService.CalculateTotalAmount(cart.GetAll());
+            Console.WriteLine($"Total amount: {totalAmount}");
         }
     }
 }

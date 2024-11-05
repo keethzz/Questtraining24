@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace Day19ecommercemanagement
 {
-    internal class Item
+    public class CartItem
     {
         public string Name { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public Item(string name, int quantity, decimal price)
-        {
-            Name = name;
-            Quantity = quantity;
-            Price = price;
-        }
+        public decimal TotalPrice => Price * Quantity;
     }
+
 }

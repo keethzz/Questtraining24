@@ -6,28 +6,19 @@ using System.Threading.Tasks;
 
 namespace Day19ecommercemanagement
 {
-    class BillingService
+    public class BillingService
     {
-        private Cart cart;
-        private Discount discount;
+        private readonly IDiscountStrategy _discountStrategy;
 
-        public BillingService(Cart cart, Discount discount)
+        public BillingService(IDiscountStrategy discountStrategy)
         {
-            this.cart = cart;
-            this.discount = discount;
+            _discountStrategy = discountStrategy;
         }
-         public decimal CalculateTotal()
+
+        public decimal CalculateTotalAmount(List<CartItem> cartItems)
         {
-            decimal total = 0;
-            foreach (var item in cart.GetItems())
-            {
-                total += item.Quantity * item.Price;
-            }
-            if (discount != null)
-            {
-                total = discount.ApplyDiscount(total);
-            }
-            return total;
+            var totalAmount = cartItems.Sum(i => i.TotalPrice);
+            return _discountStrategy.ApplyDiscount(totalAmount);
         }
     }
 }

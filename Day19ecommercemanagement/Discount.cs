@@ -6,22 +6,18 @@ using System.Threading.Tasks;
 
 namespace Day19ecommercemanagement
 {
-    abstract class Discount
+    public interface IDiscountStrategy
     {
-        public abstract decimal ApplyDiscount(decimal total);
+        decimal ApplyDiscount(decimal totalAmount);
     }
-    class PercentageDiscount : Discount
+    public class PercentageDiscountStrategy : IDiscountStrategy
     {
-        private decimal percentage;
+        private readonly decimal _discountPercentage = 2;
 
-        public PercentageDiscount(decimal percentage)
-        {
-            this.percentage = percentage;
-        }
-
-        public override decimal ApplyDiscount(decimal total)
-        {
-            return total - (total * percentage / 100);
-        }
+        public decimal ApplyDiscount(decimal totalAmount) => totalAmount - (totalAmount * _discountPercentage / 100);
+    }
+    public class FlatDiscountStrategy : IDiscountStrategy
+    {
+        public decimal ApplyDiscount(decimal totalAmount) => totalAmount - 200;
     }
 }
